@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, 
+initial-scale=1.0">
+<title>Secure Website</title>
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #509ef7f0;
+    color: hsl(225, 23%, 38%);
+    font-family: "Inter", "Roboto", "Open Sans", sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+  }
+
+  .form-container {
+    width: min(100%, 410px);
+    background: rgba(255, 255, 255, 0.94);
+    padding: 28px 32px;
+    border: 1px solid #bfdbfe;
+    border-radius: 16px;
+    box-shadow: 0 18px 45px #282d3d2e;
+  }
+
+  h1 {
+    margin: 0 0 22px;
+    color: #1e3a8a;
+    font-size: 1.7rem;
+    letter-spacing: 0;
+  }
+
+  form {
+    text-align: left;
+  }
+
+  .form-container input,
+  .form-container select {
+    width: 100%;
+    height: 38px;
+    padding: 0 12px;
+    margin: 4px 0 12px;
+    border: 1px solid #93c5fd;
+    border-radius: 8px;
+    background-color: #f8fbff;
+    color: #172554;
+    font: inherit;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .form-container select {
+    padding: 0 12px;
+  }
+
+  .form-container input:focus,
+  .form-container select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16);
+  }
+
+  .form-container label {
+    display: block;
+    color: #1e40af;
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+
+  .button {
+    width: 100%;
+    padding: 12px 25px;
+    border: 0;
+    background: #1d4ed8;
+    color: #fefefe;
+    border-radius: 8px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+
+  button:hover {
+    background: #1e40af;
+    transform: translateY(-1px);
+  }
+
+  .form-container p {
+    margin: 18px 0 0;
+    color: #475569;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .form-container a {
+    color: #1d4ed8;
+    font-weight: 700;
+  }
+
+  @media (max-width: 420px) {
+    body {
+      padding: 12px;
+    }
+
+    .form-container {
+      padding: 24px 20px;
+    }
+
+    h1 {
+      font-size: 1.55rem;
+    }
+  }
+</style>
+<body>
+<div class="form-container">
+<h1>Registration Form</h1>
+<form action="registration.php" method="post">
+<label>Fullname:</label>
+<input type="text" name="fullname" id="fullname" required><br>
+<label>Username:</label>
+<input type="text" name="username" id="username" maxlength="25" required><br>
+<label>Password:</label>
+<input type="password" name="password"id="password"required><br>
+<label>Confirm Password:</label>
+<input type="password" name="confirm_password" id="confirm_password" required><br>
+<label>Age:</label>
+<input type="number" name="age" id="age" min="1" required><br>
+<label>Gender:</label>
+<select name="gender" id="gender" required>
+<option value="">Select gender</option>
+<option value="Male">Male</option>
+<option value="Female">Female</option>
+<option value="Others">Others</option>
+</select><br>
+<label>Address:</label>
+<input type="text" name="address" id="address" required><br>
+<button class="button" type="submit" name="register">Register</button>
+<p>Already have an account? <a href="login.php">Login here</a></p>
+</form>
+</div>
+</body>
+</html>
